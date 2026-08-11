@@ -1,70 +1,325 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BİTEK | Bilim ve Teknoloji Ekibi</title>
-    <link rel="stylesheet" href="style.css"> .site-header {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BİTEK | Bilim ve Teknoloji Ekibi</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #071a33;
+    color: white;
+}
+
+header {
+    background: #0b2345;
+    padding: 25px;
     text-align: center;
-    padding: 30px 20px;
+    border-bottom: 3px solid #1d5fa7;
 }
 
 .logo {
-    width: 220px;
-    max-width: 80%;
-    height: auto;
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
+
+.subtitle {
+    margin-top: 8px;
+    color: #b8d8f5;
+    font-size: 16px;
+}
+
+nav {
+    background: #06162b;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 70px 20px;
+    background: #0b2345;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #c9ddf0;
+    line-height: 1.7;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 25px;
+    margin: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.primary {
+    background: white;
+    color: #071a33;
+}
+
+.secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+section {
+    padding: 55px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #0d2c52;
+    border: 1px solid #245b91;
+    border-radius: 12px;
+    padding: 25px;
+    width: 280px;
+}
+
+.card h3 {
+    color: #b9ddff;
+}
+
+.card p {
+    color: #d4e3f1;
+    line-height: 1.6;
+}
+
+.info {
+    background: #06162b;
+    border-radius: 12px;
+    padding: 30px;
+    line-height: 1.8;
+}
+
+footer {
+    background: #040e1c;
+    text-align: center;
+    padding: 30px;
+    color: #9fb4c9;
+}
+</style>
+
 </head>
 
-<header class="site-header">
-    <img src="bitek-logo.png" alt="BİTEK Bilim ve Teknoloji Ekibi" class="logo">
-</header> <body>
+<body>
 
-    <header class="site-header">
-        <a href="index.html">
-            <img src="logo.png" alt="BİTEK Bilim ve Teknoloji Ekibi" class="logo">
-        </a>
+<header>
+    <div class="logo">BİTEK</div>
+    <div class="subtitle">Bilim ve Teknoloji Ekibi</div>
+</header>
 
-        <nav class="menu">
-            <a href="index.html">Ana Sayfa</a>
-            <a href="ekip.html">Ekibimiz</a>
-            <a href="projeler.html">Projeler</a>
-            <a href="duyurular.html">Duyurular</a>
-        </nav>
-    </header>
+<nav>
+    <a href="#anasayfa">Ana Sayfa</a>
+    <a href="#hakkimizda">Hakkımızda</a>
+    <a href="#departmanlar">Departmanlar</a>
+    <a href="#faaliyetler">Faaliyetler</a>
+    <a href="#iletisim">İletişim</a>
+</nav>
 
-    <main>
+<div class="hero" id="anasayfa">
 
-        <section class="hero">
-            <p class="badge">BİLİM VE TEKNOLOJİ EKİBİ</p>
+    <h1>Bilim ve Teknolojiye Hoş Geldiniz</h1>
 
-            <h1>BİTEK</h1>
+    <p>
+        BİTEK, bilimsel düşünceyi, teknolojiyi ve takım çalışmasını
+        bir araya getiren öğrenci odaklı bir bilim ve teknoloji ekibidir.
+    </p>
 
+    <div class="buttons">
+        <a class="button primary" href="#kayit">Ekip Kayıt</a>
+        <a class="button secondary" href="#hakkimizda">Siteyi Ziyaret Et</a>
+    </div>
+
+</div>
+
+<section id="hakkimizda">
+
+    <h2>Biz Kimiz?</h2>
+
+    <div class="info">
+
+        <p>
+            BİTEK Bilim ve Teknoloji Ekibi; öğrencilerin bilim,
+            teknoloji, yazılım, tasarım ve proje geliştirme alanlarında
+            kendilerini geliştirmelerini amaçlayan bir ekip sistemidir.
+        </p>
+
+        <p>
+            Amacımız ekip üyelerinin yalnızca projelerde görev alması değil,
+            aynı zamanda sorumluluk almayı, ekip çalışmasını ve liderliği
+            öğrenmesini sağlamaktır.
+        </p>
+
+        <p>
+            <strong>Misyonumuz:</strong>
+            Bilim ve teknoloji alanında üretken, araştırmacı ve
+            sorumluluk sahibi öğrenciler yetiştirmek.
+        </p>
+
+        <p>
+            <strong>Vizyonumuz:</strong>
+            Yenilikçi projeler üreten, güçlü bir ekip kültürüne sahip
+            profesyonel bir öğrenci topluluğu oluşturmak.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="departmanlar">
+
+    <h2>Departmanlarımız</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Yazılım</h3>
             <p>
-                Bilim, teknoloji ve yenilik alanlarında
-                çalışan genç ve üretken bir ekip.
+                Web, uygulama, otomasyon ve yazılım projeleri geliştirir.
             </p>
+        </div>
 
-            <div class="buttons">
-                <a href="ekip.html" class="button">Ekibimizi Tanı</a>
-                <a href="projeler.html" class="button secondary">Projelerimiz</a>
-            </div>
-        </section>
-
-        <section class="about">
-            <h2>BİTEK Nedir?</h2>
-
+        <div class="card">
+            <h3>Teknik</h3>
             <p>
-                BİTEK, bilim ve teknolojiye ilgi duyan öğrencilerin
-                bir araya gelerek projeler geliştirdiği bir ekip çalışmasıdır.
+                Elektronik, donanım, robotik ve teknik proje çalışmalarını yürütür.
             </p>
-        </section>
+        </div>
 
-    </main>
+        <div class="card">
+            <h3>Medya ve İletişim</h3>
+            <p>
+                Sosyal medya, duyurular, içerik ve ekip iletişimini yönetir.
+            </p>
+        </div>
 
-    <footer>
-        <p>© 2026 BİTEK - Bilim ve Teknoloji Ekibi</p>
-    </footer>
+        <div class="card">
+            <h3>Tasarım</h3>
+            <p>
+                Grafik, sunum, proje görselleri ve tasarım çalışmalarını yürütür.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="faaliyetler">
+
+    <h2>Faaliyetlerimiz</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Proje Geliştirme</h3>
+            <p>
+                Bilim ve teknoloji alanında yeni projeler geliştiriyoruz.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Eğitimler</h3>
+            <p>
+                Ekip üyelerinin teknik ve yönetimsel gelişimini destekliyoruz.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Etkinlikler</h3>
+            <p>
+                Bilimsel etkinlikler, toplantılar ve ekip organizasyonları düzenliyoruz.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="kayit">
+
+    <h2>Ekibe Katıl</h2>
+
+    <div class="info">
+
+        <p>
+            BİTEK ekibinde görev almak ve projelerde yer almak
+            istiyorsan başvuru sürecine katılabilirsin.
+        </p>
+
+        <div class="buttons">
+            <a class="button primary" href="#">
+                Başvuru Yap
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="iletisim">
+
+    <h2>İletişim</h2>
+
+    <div class="info">
+        <p>
+            BİTEK Bilim ve Teknoloji Ekibi
+        </p>
+
+        <p>
+            Bilim • Teknoloji • Proje • Ekip
+        </p>
+    </div>
+
+</section>
+
+<footer>
+    BİTEK Bilim ve Teknoloji Ekibi
+    <br>
+    Bilim ve teknoloji için birlikte üretiyoruz.
+</footer>
 
 </body>
 </html>
