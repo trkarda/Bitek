@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>BİTEK | Bilim ve Teknoloji Ekibi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#anasayfa"><span class="mark">B</span><span><b>BİTEK</b><small>BİLİM VE TEKNOLOJİ EKİBİ</small></span></a>
+    <nav>
+      <a href="#anasayfa">Ana Sayfa</a>
+      <a href="#ekip">Ekip</a>
+      <a href="#departmanlar">Departmanlar</a>
+      <button class="nav-btn" onclick="openAuth('login')">Ekip Girişi</button>
+      <button class="nav-btn filled" onclick="openAuth('apply')">Ekibe Katıl</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="anasayfa" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">BİTEK / BİLİM & TEKNOLOJİ</p>
+        <h1>Bilimi keşfet.<br><em>Teknolojiyi üret.</em></h1>
+        <p class="lead">BİTEK, bilim ve teknoloji alanında üretim yapan; öğrenmeyi, ekip çalışmasını ve profesyonel proje kültürünü merkeze alan bir ekip yapısıdır.</p>
+        <div class="actions">
+          <button class="btn light" onclick="openAuth('apply')">Ekibe Katıl</button>
+          <button class="btn outline" onclick="document.querySelector('#ekip').scrollIntoView({behavior:'smooth'})">Ekibi Tanı</button>
+        </div>
+      </div>
+      <div class="hero-ring"></div>
+    </section>
+
+    <section id="ekip" class="section">
+      <div class="section-head"><span>01 / BİTEK</span><h2>Profesyonel bir ekip<br><em>güçlü bir vizyon.</em></h2></div>
+      <div class="about-grid">
+        <article><small>KURULUŞ</small><h3>Kuruluş Tarihi</h3><p>Kuruluş tarihi bilgisi yönetim panelinden düzenlenecek.</p></article>
+        <article><small>YÖNETİM</small><h3>Yönetim Kurulu Başkanı</h3><p>Başkan bilgisi yönetim panelinden yayınlanacak.</p></article>
+        <article><small>MİSYON</small><h3>Neden Kurulduk?</h3><p>Bilim ve teknoloji alanında üretim yapabilecek disiplinli ve profesyonel bir ekip oluşturmak.</p></article>
+        <article><small>FAALİYET</small><h3>Aktif Faaliyetler</h3><p>Projeler, eğitimler, yarışmalar, etkinlikler ve ekip çalışmaları.</p></article>
+      </div>
+    </section>
+
+    <section id="departmanlar" class="section navy">
+      <div class="section-head"><span>02 / ORGANİZASYON</span><h2>Departmanlarımız</h2></div>
+      <div class="departments">
+        <div><b>01</b><strong>Departman 1</strong><p>Ana departman açıklaması.</p></div>
+        <div><b>02</b><strong>Departman 2</strong><p>Ana departman açıklaması.</p></div>
+        <div><b>03</b><strong>Departman 3</strong><p>Ana departman açıklaması.</p></div>
+        <div><b>04</b><strong>Departman 4</strong><p>Ana departman açıklaması.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><span>03 / DUYURULAR</span><h2>Etkinlik & Duyurular</h2></div>
+      <div class="announcement"><span>DUYURU</span><div><h3>BİTEK yeni dönem çalışmaları</h3><p>Etkinlik, toplantı ve proje duyuruları burada yayınlanacak.</p></div></div>
+    </section>
+  </main>
+
+  <footer><b>BİTEK</b><span>Bilim ve Teknoloji Ekibi</span><span>© 2026</span></footer>
+
+  <div id="auth" class="modal" onclick="backdropClose(event)">
+    <div class="modal-card">
+      <button class="x" onclick="closeAuth()">×</button>
+      <div id="auth-content"></div>
+    </div>
+  </div>
+
+<script>
+const auth = document.getElementById('auth');
+const content = document.getElementById('auth-content');
+
+function openAuth(type){
+  auth.classList.add('show');
+  if(type==='apply') renderApply(); else renderLogin();
+}
+function closeAuth(){ auth.classList.remove('show'); }
+function backdropClose(e){ if(e.target===auth) closeAuth(); }
+
+function renderApply(){
+ content.innerHTML = `
+ <p class="eyebrow">BİTEK / BAŞVURU</p><h2>Ekibe Katıl</h2>
+ <p class="muted">Başvuru bilgilerini doldur. Bu sürümde veriler henüz sunucuya kaydedilmiyor.</p>
+ <form onsubmit="demoSubmit(event,'Başvurun alındı. Yönetici paneline bağlanmaya hazır.')">
+   <label>İsim Soy isim<input required name="name"></label>
+   <label>E-posta<input required type="email" name="email"></label>
+   <label>Departman tercihi<select required name="department"><option value="">Seçiniz</option><option>Departman 1</option><option>Departman 2</option><option>Departman 3</option><option>Departman 4</option></select></label>
+   <label>Neden katılmak istiyorsun?<textarea required name="reason"></textarea></label>
+   <button class="btn dark full">Başvuruyu Gönder</button>
+ </form>`;
+}
+function renderLogin(){
+ content.innerHTML = `
+ <p class="eyebrow">BİTEK / EKİP GİRİŞİ</p><h2>Üye Girişi</h2>
+ <p class="muted">İlk prototipte gerçek kimlik doğrulama yoktur.</p>
+ <form onsubmit="demoSubmit(event,'Giriş ekranı hazır. Gerçek kimlik doğrulama backend aşamasında bağlanacak.')">
+   <label>İsim Soy isim<input required name="name"></label>
+   <label>Sınıf<input required name="grade"></label>
+   <label>Şube<input required name="branch"></label>
+   <label>Sınıf No<input required name="number"></label>
+   <label>E-posta adresi<input required type="email" name="email"></label>
+   <button class="btn dark full">Giriş Yap</button>
+ </form>`;
+}
+function demoSubmit(e,msg){e.preventDefault();alert(msg);}
+</script>
+</body>
+</html>
